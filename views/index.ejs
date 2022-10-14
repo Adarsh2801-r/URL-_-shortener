@@ -13,15 +13,15 @@
     <h1 style = "text-align:center;">URL Shortener</h1>
     <div class="Container" >
     <div style = "padding-top:5%;padding-left: 37%;padding-right:10%;">
-    <form action="" , method="POST" class="my-4form-inline">
+    <form action="/shortUrl" , method="POST" class="my-4form-inline">
       <label for="fullURL" class="sr-only"> URL </label>
       <div  class = "col-xs-5">
-      <input required placeholder="URL" type="url" ,name="fullURL" ,id="fullURL" class="form-control"/>
+      <input required placeholder="URL" type="url" name="fullURL" id="fullURL" class="form-control"/>
       </div>
       <button class="btn btn-success">Submit</button>
     </form>
     </div>
-    <table class="table table-striped table-responsive">
+    <table id="tbUser" class="table table-striped table-responsive">
         <thead>
             <th>
                 FullURL
@@ -33,21 +33,34 @@
                 Clicks
             </th>
             <tbody>
+                <% shortUrls.forEach(shrtUrl => { %>
                 <tr>
                     <td>
-                        <a href="https://www.google.com/">https://www.google.com/</a>
+                        <a href="<%= shrtUrl.fullUrl%>"><%= shrtUrl.fullUrl%></a>
                     </td>
                     <td>
-                        <a href="https://www.google.com/">google</a>
+                        <a href="<%= shrtUrl.shortUrl%>"><%= shrtUrl.shortUrl%></a>
                     </td>
                     <td>
-                        3
+                        <%= shrtUrl.clicks %>
                     </td>
+                    <td><button class="btnDelete btn-danger">Delete</button></td>
                 </tr>
+                <% }) %>
             </tbody>
         </thead>
     </table>
     </div>
+    
+<script>
+$(document).ready(function(){
+
+ $("#tbUser").on('click','.btnDelete',function(){
+       $(this).closest('tr').remove();
+     });
+
+});
+</script>
 
   </body>
 </html>
