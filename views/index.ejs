@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Url-shortener</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <h1 style = "text-align:center;">URL Shortener</h1>
+    <div class="Container" >
+    <div style = "padding-top:5%;padding-left: 37%;padding-right:10%;">
+    <form action="" , method="POST" class="my-4form-inline">
+      <label for="fullURL" class="sr-only"> URL </label>
+      <div  class = "col-xs-5">
+      <input required placeholder="URL" type="url" ,name="fullURL" ,id="fullURL" class="form-control"/>
+      </div>
+      <button class="btn btn-success">Submit</button>
+    </form>
+    </div>
+    <table class="table table-striped table-responsive">
+        <thead>
+            <th>
+                FullURL
+            </th>
+            <th>
+                ShortenedURL
+            </th> 
+            <th>
+                Clicks
+            </th>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="https://www.google.com/">https://www.google.com/</a>
+                    </td>
+                    <td>
+                        <a href="https://www.google.com/">google</a>
+                    </td>
+                    <td>
+                        3
+                    </td>
+                </tr>
+            </tbody>
+        </thead>
+    </table>
+    </div>
+
+  </body>
+</html>
