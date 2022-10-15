@@ -56,6 +56,8 @@
 $(document).ready(function(){
 
  $("#tbUser").on('click','.btnDelete',function(){
+       const full = $(this).closest('tr').contents()[1].childNodes[1].childNodes[0];
+       console.log(full)
        $(this).closest('tr').remove();
      });
 

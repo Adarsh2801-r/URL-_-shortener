@@ -27,6 +27,9 @@ app.post("/shortUrl", async (req, res) => {
 });
 app.get("/:shortUrl", async (req, res) => {
   const surl = await ShortUrl.findOne({ shortUrl: req.params.shortUrl });
+  if (surl == null) {
+    return res.status(401);
+  }
   surl.clicks++;
   surl.save();
   res.redirect(surl.fullUrl);
